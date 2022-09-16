@@ -3,13 +3,13 @@
 #include QMK_KEYBOARD_H
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT(
-      KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MPLY,        KC_MPLY, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
-      KC_CAPS,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-LCTL_T(KC_LEFT), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_DOWN,        KC_UP,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RCTL_T(KC_RGHT),
-                                   KC_LGUI, TG(2),   KC_LALT, LSFT_T(KC_SPC), RSFT_T(KC_ENT),   KC_RALT, TG(1), RGUI_T(KC_BSPC)
-    ),
+[_QWERTY] = LAYOUT(
+    KC_ESC, 	KC_1, 	KC_2,   KC_3,	KC_4,    KC_5,	KC_MPLY,     	KC_MPLY, 	KC_6, 	KC_7,	KC_8,    KC_9,   KC_0,    KC_MINS,
+    KC_TAB, 	KC_Q, 	KC_W,   KC_E,   KC_R,    KC_T,                             	KC_Y, 	KC_U,   KC_I,    KC_O,   KC_P,    KC_LBRC,
+	KC_CAPS, 	KC_A, 	KC_S,   KC_D,   KC_F,    KC_G,                             	KC_H, 	KC_J,   KC_K,    KC_L,   KC_SCLN, KC_QUOT,
+	KC_LCTRL, 	KC_Z, 	KC_X,   KC_C,   KC_V,    KC_B, 	KC_DOWN,     	KC_UP,  KC_N,	KC_M,   KC_COMM, KC_DOT, KC_SLSH, KC_RCTRL,
+							KC_LGUI, TG(_FN),  KC_LALT,    KC_SPC,      KC_ENT,	KC_RALT, TG(_NUM),	KC_BSPC
+	),
 
     [1] = LAYOUT(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,        _______, KC_CIRC, KC_KP_7, KC_KP_8, KC_KP_9, XXXXXXX, XXXXXXX,
