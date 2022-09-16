@@ -16,7 +16,7 @@ LCTL_T(KC_LEFT), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_DOWN,        KC
         _______, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX,                          KC_HASH, KC_KP_4, KC_KP_5, KC_KP_6, XXXXXXX, XXXXXXX,
         XXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT,KC_LBRC, KC_RBRC,                          KC_AMPR, KC_KP_1, KC_KP_2, KC_KP_3, XXXXXXX, XXXXXXX,
         _______, XXXXXXX, KC_PAST, KC_PPLS, KC_PSLS, KC_EQL,  _______,        _______, KC_DLR,  KC_KP_0, KC_PDOT, KC_COLN, KC_PMNS, _______,
-                                   _______, _______, _______, _______,        _______, _______, _______, _______ 
+                                   _______, _______, _______, _______,        _______, _______, _______, _______
     ),
 
     [2] = LAYOUT(
@@ -32,7 +32,7 @@ LCTL_T(KC_LEFT), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_DOWN,        KC
         QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                          XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD,RGB_SAD, RGB_M_P,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_CAPS,                          XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUI, RGB_VAI, RGB_M_B,
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUD, RGB_VAD, RGB_M_R,
-                                   _______, _______, _______, _______,        _______, _______, _______, _______ 
+                                   _______, _______, _______, _______,        _______, _______, _______, _______
     )
 };
 
@@ -47,7 +47,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 
 #ifdef OLED_ENABLE
 static void print_status_narrow(void) {
-    // Create OLED content
+    // Print header
     oled_write_P(PSTR("\n"), false);
     oled_write_P(PSTR(""), false);
     oled_write_P(PSTR("Lotus -58-"), false);
@@ -71,11 +71,19 @@ static void print_status_narrow(void) {
         default:
             oled_write_P(PSTR("Undef"), false);
     }
-    
+
     oled_write_P(PSTR("\n"), false);
     led_t led_usb_state = host_keyboard_led_state();
     oled_write_ln_P(PSTR("Caps- lock"), led_usb_state.caps_lock);
-    
+
+
+}
+
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+    if (is_keyboard_master()) {
+        return OLED_ROTATION_90;
+    }
+    return rotation;
 }
 
 bool oled_task_user(void) {
@@ -83,4 +91,40 @@ bool oled_task_user(void) {
     print_status_narrow();
     return false;
 }
+#endif
+
+#endif
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_QWERTY:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_QWERTY);
+            }
+            return false;
+    }
+    return true;
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+   return update_tri_layer_state(state, _NUM, _FN, _SYS);
+
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 0) {
+        if (clockwise) {
+            tap_code(KC_VOLD);
+        } else {
+            tap_code(KC_VOLU);
+        }
+    } else if (index == 1) {
+        if (clockwise) {
+                tap_code(KC_MPRV);
+            } else {
+                tap_code(KC_VOLU);
+            }
+        }
+    }
+    return true;
+}
+
 #endif
