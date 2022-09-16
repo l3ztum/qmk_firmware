@@ -2,13 +2,46 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include QMK_KEYBOARD_H
 
+#include "quantum.h"
+
+bool autoshift;
+
+enum layers {
+    _QWERTY,
+    _NUM,
+    _FN,
+    _SYS,
+};
+
+enum custom_keycodes {
+    KC_QWERTY = SAFE_RANGE,
+    KC_NUMERIC,
+    KC_FUNCTION,
+	KC_SYSTEM,
+};
+
+/* Legend											    _____        _____
+ * .--------.-------.-------.-------.-------.-------.  /     \      /     \  .-------.-------.-------.-------.-------.--------.
+ * |  Esc   |   1   |   2   |   3   |   4   |   5   | ( Media )    ( Media ) |   6   |   7   |   8   |   9   |   0   |   -    |
+ * |--------+-------+-------+-------+-------+-------|  \_____/      \_____/  |-------+-------+-------+-------+-------+--------|
+ * |  Tab   |   Q   |   W   |   E   |   R   |   T   |                        |   Y   |   U   |   I   |   O   |   P   | [ (Å)  |
+ * |--------+-------+-------+-------+-------+-------|                        |-------+-------+-------+-------+-------+--------|
+ * | Capslk |   A   |   S   |   D   |   F   |   G   |                        |   H   |   J   |   K   |   L   | ; (Ö) | ' (Ä)  |
+ * |--------+-------+-------+-------+-------+-------+----------.  .----------+-------+-------+-------+-------+-------+--------|
+ * |  Ctrl  |   Z   |   X   |   C   |   V   |   B   |   Down   |  |    Up    |   N   |   M   |   ,   |   .   |   /   |  Ctrl  |
+ * '--------'-------'-------+-------+-------+-------+-.--------'  '--------.-+-------+-------+-------+-------'-------'--------'
+ *                          |  Win  | Lower |  Alt  |/ Space  /    \  Enter \| AltGr | Raise | Bksp  |
+							|		|		|		| Shift  /      \  Shift |       |       |       |
+ *                          '-------'-------'-------'-------'        '-------'-------'-------'-------'
+ */
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] = LAYOUT(
     KC_ESC, 	KC_1, 	KC_2,   KC_3,	KC_4,    KC_5,	KC_MPLY,     	KC_MPLY, 	KC_6, 	KC_7,	KC_8,    KC_9,   KC_0,    KC_MINS,
     KC_TAB, 	KC_Q, 	KC_W,   KC_E,   KC_R,    KC_T,                             	KC_Y, 	KC_U,   KC_I,    KC_O,   KC_P,    KC_LBRC,
 	KC_CAPS, 	KC_A, 	KC_S,   KC_D,   KC_F,    KC_G,                             	KC_H, 	KC_J,   KC_K,    KC_L,   KC_SCLN, KC_QUOT,
 	KC_LCTRL, 	KC_Z, 	KC_X,   KC_C,   KC_V,    KC_B, 	KC_DOWN,     	KC_UP,  KC_N,	KC_M,   KC_COMM, KC_DOT, KC_SLSH, KC_RCTRL,
-							KC_LGUI, TG(_FN),  KC_LALT,    KC_SPC,      KC_ENT,	KC_RALT, TG(_NUM),	KC_BSPC
+							KC_LGUI, TG(_FN),  KC_LALT,    LSFT_T(KC_SPC),      RSFT_T(KC_ENT),	KC_RALT, TG(_NUM),	KC_BSPC
 	),
 
     [1] = LAYOUT(
