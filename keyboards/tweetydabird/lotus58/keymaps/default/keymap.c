@@ -2,47 +2,14 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #include QMK_KEYBOARD_H
 
-#include "quantum.h"
-
-bool autoshift;
-
-enum layers {
-    _QWERTY,
-    _NUM,
-    _FN,
-    _SYS,
-};
-
-enum custom_keycodes {
-    KC_QWERTY = SAFE_RANGE,
-    KC_NUMERIC,
-    KC_FUNCTION,
-	KC_SYSTEM,
-};
-
-/* Legend											     _____        _____
- * .---------.-------.-------.-------.-------.-------.  /     \      /     \  .-------.-------.-------.-------.-------.---------.
- * |  Esc    |   1   |   2   |   3   |   4   |   5   | ( Media )    ( Media ) |   6   |   7   |   8   |   9   |   0   |    -    |
- * |---------+-------+-------+-------+-------+-------|  \_____/      \_____/  |-------+-------+-------+-------+-------+---------|
- * |  Tab    |   Q   |   W   |   E   |   R   |   T   |                        |   Y   |   U   |   I   |   O   |   P   |  [ (Å)  |
- * |---------+-------+-------+-------+-------+-------|                        |-------+-------+-------+-------+-------+---------|
- * | Capslk  |   A   |   S   |   D   |   F   |   G   |                        |   H   |   J   |   K   |   L   | ; (Ö) |  ' (Ä)  |
- * |---------+-------+-------+-------+-------+-------+----------.  .----------+-------+-------+-------+-------+-------+---------|
- * | <- Ctrl |   Z   |   X   |   C   |   V   |   B   |   Down   |  |    Up    |   N   |   M   |   ,   |   .   |   /   | Ctrl -> |
- * '---------'-------'-------+-------+-------+-------+-.--------'  '--------.-+-------+-------+-------+-------'-------'---------'
- *                           |  Win  | Lower |  Alt  |/ Space  /    \  Enter \| AltGr | Raise | Bksp  |
-							 |		 |		 |	     | Shift  /      \  Shift |       |       |       |
- *                           '-------'-------'-------'-------'        '-------'-------'-------'-------'
- */
-
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-[_QWERTY] = LAYOUT(
-    KC_ESC, 	KC_1, 	KC_2,   KC_3,	KC_4,    KC_5,	KC_MPLY,     	KC_MPLY, 	KC_6, 	KC_7,	KC_8,    KC_9,   KC_0,    KC_MINS,
-    KC_TAB, 	KC_Q, 	KC_W,   KC_E,   KC_R,    KC_T,                             	KC_Y, 	KC_U,   KC_I,    KC_O,   KC_P,    KC_LBRC,
-	KC_CAPS, 	KC_A, 	KC_S,   KC_D,   KC_F,    KC_G,                             	KC_H, 	KC_J,   KC_K,    KC_L,   KC_SCLN, KC_QUOT,
-	LCTL_T(KC_LEFT), 	KC_Z, 	KC_X,   KC_C,   KC_V,    KC_B, 	KC_DOWN,     	KC_UP,  KC_N,	KC_M,   KC_COMM, KC_DOT, KC_SLSH, RCTL_T(KC_RGHT),
-							KC_LGUI, TG(_FN),  KC_LALT,    LSFT_T(KC_SPC),      RSFT_T(KC_ENT),	KC_RALT, TG(_NUM),	KC_BSPC
-	),
+    [0] = LAYOUT(
+      KC_ESC,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MPLY,        KC_MPLY, KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
+      KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
+      KC_CAPS,   KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
+LCTL_T(KC_LEFT), KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_DOWN,        KC_UP,   KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, RCTL_T(KC_RGHT),
+                                   KC_LGUI, TG(2),   KC_LALT, LSFT_T(KC_SPC), RSFT_T(KC_ENT),   KC_RALT, TG(1), RGUI_T(KC_BSPC)
+    ),
 
     [1] = LAYOUT(
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,        _______, KC_CIRC, KC_KP_7, KC_KP_8, KC_KP_9, XXXXXXX, XXXXXXX,
@@ -80,7 +47,7 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 
 #ifdef OLED_ENABLE
 static void print_status_narrow(void) {
-    // Print header
+    // Create OLED content
     oled_write_P(PSTR("\n"), false);
     oled_write_P(PSTR(""), false);
     oled_write_P(PSTR("Lotus -58-"), false);
@@ -109,14 +76,6 @@ static void print_status_narrow(void) {
     led_t led_usb_state = host_keyboard_led_state();
     oled_write_ln_P(PSTR("Caps- lock"), led_usb_state.caps_lock);
 
-
-}
-
-oled_rotation_t oled_init_user(oled_rotation_t rotation) {
-    if (is_keyboard_master()) {
-        return OLED_ROTATION_90;
-    }
-    return rotation;
 }
 
 bool oled_task_user(void) {
@@ -124,39 +83,4 @@ bool oled_task_user(void) {
     print_status_narrow();
     return false;
 }
-#endif
-
-#endif
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case KC_QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
-    }
-    return true;
-}
-
-layer_state_t layer_state_set_user(layer_state_t state) {
-   return update_tri_layer_state(state, _NUM, _FN, _SYS);
-
-bool encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLD);
-        } else {
-            tap_code(KC_VOLU);
-        }
-    } else if (index == 1) {
-        if (clockwise) {
-                tap_code(KC_VOLD);
-            } else {
-                tap_code(KC_VOLU);
-            }
-        }
-    return true;
-}
-
 #endif
