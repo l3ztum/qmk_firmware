@@ -18,6 +18,14 @@
 * nanoBoot - A tiny 512 byte bootloader giving far more usable memory for features (can be used on both Elite C and Pro Micro).
 
 
+
+### This keyboard firmware contains three different versions, all for the same PCB/hardware, but depending on your choice of RGB configuration. 
+
+* Full RGB - Uses 58 RGB LEDs under the keys. 
+* RGB Glow - Uses 12 RGB LEDs to create a nice glow effect between the plates. 
+* No RGB - 
+
+
 Make example for this keyboard (after setting up your build environment):
 
     make tweetydabird/lotus58/promicro:default
