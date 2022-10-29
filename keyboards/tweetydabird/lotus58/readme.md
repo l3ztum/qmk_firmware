@@ -8,6 +8,14 @@
 * Hardware Supported: *Lotus 58 Glow v1.11 - 1.24 PCB, Pro Micro or pin-compatible*
 * Hardware Availability: [Lectronz Store]https://lectronz.com/stores/tweetys-wild-thinking
 
+
+### This keyboard firmware contains three different versions, all for the same PCB/hardware, but depending on your choice of RGB configuration. 
+
+* Full RGB - Uses 58 RGB LEDs under the keys. 
+* RGB Glow - Uses 12 RGB LEDs to create a nice glow effect between the plates. 
+* No RGB - 
+
+
 Make example for this keyboard (after setting up your build environment):
 
     make tweetydabird/lotus58:default
