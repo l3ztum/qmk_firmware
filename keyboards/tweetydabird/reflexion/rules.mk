@@ -1,0 +1,3 @@
+SERIAL_DRIVER = usart
+
+WS2812_DRIVER = pwm
