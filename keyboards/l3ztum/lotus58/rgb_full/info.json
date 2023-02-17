@@ -4,7 +4,9 @@
 	"url": "https://lectronz.com/stores/tweetys-wild-thinking",
 	"maintainer": "TweetyDaBird",	
 	
-	"development_board": "elite_c",
+	"development_board": "promicro_rp2040",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
 	"bootloader_instructions": "Short marked pads on PCB, or hold top-outer key when plugging in each hand.",
 	
 	"debounce": 5,

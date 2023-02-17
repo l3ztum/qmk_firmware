@@ -22,4 +22,9 @@
 #define SPLIT_LED_STATE_ENABLE
 #define SPLIT_OLED_ENABLE
 
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_LED D5 // Specify an optional status LED by GPIO number which blinks when entering the bootloader
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET              // Activates the double-tap behavior
+#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U // Timeout window in ms in which the double tap can occur.
+#define WS2812_PIO_USE_PIO1
+#define SERIAL_PIO_USE_PIO1
+
+#define SERIAL_USART_TX_PIN C7
