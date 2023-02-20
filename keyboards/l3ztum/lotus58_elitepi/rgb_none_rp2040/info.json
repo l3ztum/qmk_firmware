@@ -4,8 +4,7 @@
 	"url": "https://lectronz.com/stores/tweetys-wild-thinking",
 	"maintainer": "TweetyDaBird",
 
-    "development_board": "bit_c_pro",
-	"pin_compatible": "elite_c"
+    "development_board": "elite_pi",
 	"bootloader_instructions": "Short marked pads on PCB, or hold top-outer key when plugging in each hand.",
 
 	"debounce": 5,
@@ -17,7 +16,7 @@
 		"extrakey": true,
 		"mousekey": false,
 		"nkro": true,
-		"rgblight": true,
+		"rgblight": false,
 		"encoder": true,
 	    "encoder_map": true,
     	"oled": true,
@@ -44,6 +43,7 @@
 	"split": {
 		"enabled": true,
 		"main": "pin",
+		"soft_serial_pin": "D5",
 
 		"transport": {
 			"protocol": "serial",
@@ -58,21 +58,6 @@
         ]
     },
 
-	"rgblight": {
-        "led_count": 58,
-        "pin": "D3",
-		"split": true,
-		"split_count": [ 29, 29 ],
-        "hue_steps": 17,
-        "saturation_steps": 17,
-        "brightness_steps": 17,
-		"max_brightness": 175,
-		"animations": {
-            "breathing": true,
-			"rainbow_mood": true,
-			"static_gradient": true
-        }
-    },
 
 	"qmk": {
         "tap_keycode_delay": 10
