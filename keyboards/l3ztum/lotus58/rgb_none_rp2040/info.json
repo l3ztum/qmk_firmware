@@ -5,7 +5,6 @@
 	"maintainer": "TweetyDaBird",
 
     "development_board": "elite_pi",
-    "pin_compatible": "elite_c",
 	"bootloader_instructions": "Short marked pads on PCB, or hold top-outer key when plugging in each hand.",
 
 	"debounce": 5,
@@ -17,7 +16,7 @@
 		"extrakey": true,
 		"mousekey": false,
 		"nkro": true,
-		"rgblight": true,
+		"rgblight": false,
 		"encoder": true,
 	    "encoder_map": true,
     	"oled": true,
@@ -55,25 +54,10 @@
 
 	"encoder": {
         "rotary": [
-            { "pin_a": "F5", "pin_b": "F4", "resolution": 2 }
+            { "pin_a": "F4", "pin_b": "F5", "resolution": 2 }
         ]
     },
 
-	"rgblight": {
-        "led_count": 58,
-        "pin": "D3",
-		"split": true,
-		"split_count": [ 29, 29 ],
-        "hue_steps": 17,
-        "saturation_steps": 17,
-        "brightness_steps": 17,
-		"max_brightness": 175,
-		"animations": {
-            "breathing": true,
-			"rainbow_mood": true,
-			"static_gradient": true
-        }
-    },
 
 	"qmk": {
         "tap_keycode_delay": 10
