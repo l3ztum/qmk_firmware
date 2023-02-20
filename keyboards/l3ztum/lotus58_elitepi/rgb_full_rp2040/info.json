@@ -4,8 +4,7 @@
 	"url": "https://lectronz.com/stores/tweetys-wild-thinking",
 	"maintainer": "TweetyDaBird",
 
-    "development_board": "bit_c_pro",
-	"pin_compatible": "elite_c"
+    "development_board": "elite_pi"
 	"bootloader_instructions": "Short marked pads on PCB, or hold top-outer key when plugging in each hand.",
 
 	"debounce": 5,
