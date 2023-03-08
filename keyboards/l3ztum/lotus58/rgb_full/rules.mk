@@ -1,4 +1,5 @@
 # This file intentionally left blank
-#MCU = RP2040
-# Bootloader selection
-#BOOTLOADER = rp2040
+WS2812_DRIVER = vendor
+SERIAL_DRIVER = vendor
+WPM_ENABLE = yes
+KEY_OVERRIDE_ENABLE = yes

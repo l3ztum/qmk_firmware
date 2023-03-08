@@ -1,0 +1,9 @@
+{
+    "development_board": "kb2040",
+
+	"matrix_pins": {
+		"rows": ["GP4", "GP5", "GP6", "GP7", "GP8"],
+		"cols": ["GP18", "GP19", "GP20", "GP10", "GP26", "GP27"]
+	}
+
+}

@@ -2,21 +2,18 @@
 	"keyboard_name": "Lotus 58 Glow",
 	"manufacturer": "Tweetys Wild Thinking",
 	"url": "https://lectronz.com/stores/tweetys-wild-thinking",
-	"maintainer": "TweetyDaBird",
-
-    "development_board": "elite_pi",
-	"bootloader_instructions": "Short marked pads on PCB, or hold top-outer key when plugging in each hand.",
+	"maintainer": "l3ztum",
 
 	"debounce": 5,
 
 	"features": {
 		"bootmagic": true,
 		"command": false,
-		"console": false,
+		"console": true,
 		"extrakey": true,
 		"mousekey": false,
 		"nkro": true,
-		"rgblight": false,
+		"rgblight": true,
 		"encoder": true,
 	    "encoder_map": true,
     	"oled": true,
@@ -34,8 +31,8 @@
 	},
 
 	"usb": {
-		"vid": "0xFEED",
-        "pid": "0x23B0",
+        "vid":"0x4C33",
+        "pid":"0x7A74",
 		"device_version": "1.2.3",
 		"force_nkro": true
 	},
@@ -43,7 +40,6 @@
 	"split": {
 		"enabled": true,
 		"main": "pin",
-		"soft_serial_pin": "D5",
 
 		"transport": {
 			"protocol": "serial",
@@ -54,10 +50,25 @@
 
 	"encoder": {
         "rotary": [
-            { "pin_a": "F4", "pin_b": "F5", "resolution": 2 }
+            { "pin_a": "GP29", "pin_b": "GP28", "resolution": 2 }
         ]
     },
 
+	"rgblight": {
+        "led_count": 58,
+        "pin": "GP0",
+		"split": true,
+		"split_count": [ 29, 29 ],
+        "hue_steps": 17,
+        "saturation_steps": 17,
+        "brightness_steps": 17,
+		"max_brightness": 175,
+		"animations": {
+            "breathing": true,
+			"rainbow_mood": true,
+			"static_gradient": true
+        }
+    },
 
 	"qmk": {
         "tap_keycode_delay": 10
@@ -69,11 +80,6 @@
     },
 
 	"diode_direction": "COL2ROW",
-	"matrix_pins": {
-		"rows": ["D4", "C6", "D7", "E6", "B4"],
-		"cols": ["B1", "B2", "B3", "B6", "F7", "F6"]
-	},
-
 	"layouts": {
 		"LAYOUT": {
 			"layout": [
