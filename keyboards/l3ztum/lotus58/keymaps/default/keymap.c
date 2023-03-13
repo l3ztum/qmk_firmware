@@ -30,6 +30,11 @@ enum custom_keycodes {
     KC_GAME,
 };
 
+layer_state_t layer_state_set_kb(layer_state_t state) {
+	// Allow switching to the 'hidden' layer
+   return update_tri_layer_state(state, 1, 2, 3);
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [0] = LAYOUT(
 //      											     				_______       _______
@@ -84,7 +89,7 @@ LCTL_T(KC_LEFT), KC_Z, 	    KC_X,      KC_C,      KC_V,       KC_B,     KC_UP,  
 
 [3] = LAYOUT(
   XXXXXXX, XXXXXXX, XXXXXXX ,  XXXXXXX, XXXXXXX, XXXXXXX, _______,     _______, XXXXXXX, XXXXXXX, XXXXXXX, RGB_MOD, RGB_SAI, RGB_TOG,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ASTG,                       XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD, RGB_SAD, RGB_M_P,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_ASTR,                       XXXXXXX, XXXXXXX, XXXXXXX, RGB_RMOD, RGB_SAD, RGB_M_P,
   XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, TO(4),                       XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUI, RGB_VAI, RGB_M_B,
   XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, RGB_HUD, RGB_VAD, RGB_M_R,
 								_______, _______, _______, _______,     _______, _______, _______, _______  \

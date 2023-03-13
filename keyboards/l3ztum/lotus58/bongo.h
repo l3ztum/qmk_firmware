@@ -502,29 +502,44 @@ static void draw_bongo(bool minimal)
         oled_set_cursor(0, 0);
         sprintf(wpm, "WPM:%03d", get_current_wpm());
         oled_write(wpm, false);
-		
-		
+
+
 		oled_set_cursor(0, 2);
 		switch (get_highest_layer(layer_state)) {
 			case 0:
 				oled_write_P(PSTR("L-Base"), false);
 				break;
 			case 1:
-				oled_write_P(PSTR("L-Num"), false);
+				oled_write_P(PSTR("L-Extra"), false);
 				break;
 			case 2:
-				oled_write_P(PSTR("L-Func"), false);
+				oled_write_P(PSTR("L-Tap"), false);
 				break;
 			case 3:
-				oled_write_P(PSTR("L-Sys"), false);
+				oled_write_P(PSTR("L-Button"), false);
 				break;
 			case 4:
-				oled_write_P(PSTR("L-Game"), false);
+				oled_write_P(PSTR("L-Nav"), false);
+				break;
+			case 5:
+				oled_write_P(PSTR("L-Mouse"), false);
+				break;
+			case 6:
+				oled_write_P(PSTR("L-Media"), false);
+				break;
+			case 7:
+				oled_write_P(PSTR("L-Num"), false);
+				break;
+			case 8:
+				oled_write_P(PSTR("L-Sym"), false);
+				break;
+			case 9:
+				oled_write_P(PSTR("L-Fun"), false);
 				break;
 			default:
 				oled_write_P(PSTR("L-Undef"), false);
 		}
-		
+
 		oled_set_cursor(oled_max_chars()-4, oled_max_lines() - 1);
 		led_t led_usb_state = host_keyboard_led_state();
 		oled_write_P(PSTR("Caps"), led_usb_state.caps_lock);
