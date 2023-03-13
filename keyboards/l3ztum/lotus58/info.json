@@ -12,10 +12,10 @@
 		"console": false,
 		"extrakey": true,
 		"mousekey": true,
+        "encoder": false,
+	    "encoder_map": false,
 		"nkro": true,
 		"rgblight": true,
-		"encoder": true,
-	    "encoder_map": true,
     	"oled": true,
 		"audio": false,
 		"split": true,
@@ -35,7 +35,7 @@
 		"device_version": "1.2.3",
 		"force_nkro": true
 	},
-	
+
 	"encoder": {
         "enabled": true,
         "rotary": [
@@ -46,17 +46,17 @@
             }
         ]
     },
-	
+
 	"matrix_pins": {
         "cols": ["B1", "B2", "B3", "B6", "F7", "F6"],
         "rows": ["D4", "C6", "D7", "E6", "B4"]
     },
-	
+
 	"matrix_size": {
         "cols": 6,
         "rows": 10
     },
-	
+
 	"split": {
 		"enabled": true,
 		"main": "pin",
@@ -163,7 +163,7 @@
 				{"matrix":[9, 4],	"x":8, "y":4.25, "h":1.25,	"label":"Enter"},
 				{"matrix":[9, 3],	"x":9.5, "y":4.5,			"label":"AltGr"},
 				{"matrix":[9, 2],	"x":10.5, "y":4.25,			"label":"Raise"},
-				{"matrix":[9, 1],	"x":11.5, "y":4.25,			"label":"BckSp"},
+				{"matrix":[9, 1],	"x":11.5, "y":4.25,			"label":"BckSp"}
 			]
 		}
     }
