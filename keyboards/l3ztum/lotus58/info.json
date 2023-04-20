@@ -76,7 +76,12 @@
 		"split": true,
 		"split_count": [ 29, 29 ],
 		"animations": {
-            "all": true
+             "alternating": true,
+             "rainbow_mood": true,
+             "rainbow_swirl": true,
+             "rgb_test": true,
+             "twinkle": true,
+             "static_gradient": true
         }
     },
 
