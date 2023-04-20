@@ -6,7 +6,6 @@
 #include QMK_KEYBOARD_H
 
 #include "manna-harbour_miryoku.h"
-#include "german_umlaut.h"
 
 // Additional Features double tap guard
 
@@ -52,17 +51,9 @@ MIRYOKU_LAYER_LIST
 // shift functions
 
 const key_override_t capsword_key_override = ko_make_basic(MOD_MASK_SHIFT, CW_TOGG, KC_CAPS);
-const key_override_t ae_key_override = ko_make_basic(MOD_BIT(KC_RIGHT_ALT), KC_A, DE_AE);
-const key_override_t ue_key_override = ko_make_basic(MOD_BIT(KC_RIGHT_ALT), KC_U, DE_UE);
-const key_override_t oe_key_override = ko_make_basic(MOD_BIT(KC_RIGHT_ALT), KC_O, DE_OE);
-const key_override_t sz_key_override = ko_make_basic(MOD_BIT(KC_RIGHT_ALT), KC_S, DE_SZ);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
-    &ae_key_override,
-    &ue_key_override,
-    &oe_key_override,
-    &sz_key_override,
     NULL
 };
 
