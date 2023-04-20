@@ -16,4 +16,3 @@
 #undef LOCKING_RESYNC_ENABLE
 
 #define BONGO_ENABLE
-
