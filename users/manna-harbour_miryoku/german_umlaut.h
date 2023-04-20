@@ -6,7 +6,15 @@ enum custom_keycodes {
   DE_UE,
   DE_OE,
   DE_SZ,
+  CPP_SCOPE,
+  BASH_UPWARD,
+  ALT_TAB
 };
+
+bool is_alt_tab_active = false; // ADD this near the beginning of keymap.c
+uint16_t alt_tab_timer = 0;     // we will be using them soon.
+
+
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch(keycode) {
@@ -61,6 +69,49 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         return false;
       }
       break;
+    case BASH_UPWARD:
+        if (record->event.pressed) {
+            SEND_STRING("../");
+        }
+        break;
+    case CPP_SCOPE:
+        if (record->event.pressed) {
+            SEND_STRING("::");
+        }
+        break;
+    case ALT_TAB:
+      if (record->event.pressed) {
+        if (!is_alt_tab_active) {
+          is_alt_tab_active = true;
+          register_code(KC_LALT);
+        }
+        alt_tab_timer = timer_read();
+        register_code(KC_TAB);
+      } else {
+        unregister_code(KC_TAB);
+      }
+      break;
   }
   return true;
 }
+
+void matrix_scan_user(void) { // The very important timer.
+  if (is_alt_tab_active) {
+    if (timer_elapsed(alt_tab_timer) > 1000) {
+      unregister_code(KC_LALT);
+      is_alt_tab_active = false;
+    }
+  }
+}
+
+const uint16_t PROGMEM ae_combo[] = {KC_Q, KC_E, COMBO_END};
+const uint16_t PROGMEM oe_combo[] = {KC_O, KC_E, COMBO_END};
+const uint16_t PROGMEM ue_combo[] = {KC_U, KC_E, COMBO_END};
+const uint16_t PROGMEM sz_combo[] = {KC_W, KC_E, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+  COMBO(ae_combo,  DE_AE),
+  COMBO(oe_combo,  DE_OE),
+  COMBO(ue_combo,  DE_UE),
+  COMBO(sz_combo,  DE_SZ)
+};

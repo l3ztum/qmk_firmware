@@ -1,0 +1,30 @@
+{
+	"keyboard_name": "joystickTest",
+	"manufacturer": "l3ztum",
+	"url": "google.com",
+	"maintainer": "l3ztum",
+    "development_board": "kb2040",
+
+	"usb": {
+		"vid": "0x4C34",
+        "pid": "0x1A74",
+		"device_version": "0.1.1",
+		"force_nkro": true
+	},
+
+
+	"matrix_size": {
+        "cols": 1,
+        "rows": 1
+    },
+
+
+	"diode_direction": "COL2ROW",
+	"layouts": {
+		"LAYOUT": {
+			"layout": [
+				{"matrix":[0, 0],	"x":0, "y":0.75,	"label":"Esc"}
+			]
+		}
+    }
+}
