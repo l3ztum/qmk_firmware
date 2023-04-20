@@ -104,10 +104,10 @@ void matrix_scan_user(void) { // The very important timer.
   }
 }
 
-const uint16_t PROGMEM ae_combo[] = {KC_Q, KC_E, COMBO_END};
-const uint16_t PROGMEM oe_combo[] = {KC_O, KC_E, COMBO_END};
-const uint16_t PROGMEM ue_combo[] = {KC_U, KC_E, COMBO_END};
-const uint16_t PROGMEM sz_combo[] = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM ae_combo[] = {LGUI_T(KC_A), LALT_T(KC_S), COMBO_END};
+const uint16_t PROGMEM oe_combo[] = {KC_O, KC_I, COMBO_END};
+const uint16_t PROGMEM ue_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM sz_combo[] = {LALT_T(KC_S), LCTL_T(KC_D), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
   COMBO(ae_combo,  DE_AE),
