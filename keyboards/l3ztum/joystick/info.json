@@ -3,7 +3,7 @@
 	"manufacturer": "l3ztum",
 	"url": "google.com",
 	"maintainer": "l3ztum",
-    "development_board": "kb2040",
+    "development_board": "promicro_rp2040",
 
 	"usb": {
 		"vid": "0x4C34",

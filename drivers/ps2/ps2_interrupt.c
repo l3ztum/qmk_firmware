@@ -48,6 +48,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #    include "ch.h"
 #    include "gpio.h"
 #    include "hal.h"
+#    include "gpio.h"
 #endif
 
 #include "ps2.h"
