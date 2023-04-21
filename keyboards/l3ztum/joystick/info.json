@@ -23,7 +23,7 @@
 	"layouts": {
 		"LAYOUT": {
 			"layout": [
-				{"matrix":[0, 0],	"x":0, "y":0.75,	"label":"Esc"}
+				{"matrix":[0, 0],	"x":0, "y":0,	"label":"Esc"}
 			]
 		}
     }

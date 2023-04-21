@@ -46,8 +46,8 @@ POSSIBILITY OF SUCH DAMAGE.
 #elif defined(PROTOCOL_CHIBIOS) // TODO: or STM32 ?
 // chibiOS headers
 #    include "ch.h"
-#    include "hal.h"
 #    include "gpio.h"
+#    include "hal.h"
 #endif
 
 #include "ps2.h"

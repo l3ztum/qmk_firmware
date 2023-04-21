@@ -24,9 +24,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         clear_keyboard();
         register_code(KC_LALT);
         if (temp_mod & MOD_MASK_SHIFT) {
-          tap_code(KC_P1); tap_code(KC_P4); tap_code(KC_P2); // Ä
+          tap_code(KC_P0); tap_code(KC_P1); tap_code(KC_P4); tap_code(KC_P2); // Ä
         } else {
-          tap_code(KC_P1); tap_code(KC_P3); tap_code(KC_P2); // ä
+          tap_code(KC_P0); tap_code(KC_P1); tap_code(KC_P3); tap_code(KC_P2); // ä
         }
         unregister_code(KC_LALT);
         return false;
@@ -38,9 +38,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         clear_keyboard();
         register_code(KC_LALT);
         if (temp_mod & MOD_MASK_SHIFT) {
-          tap_code(KC_P1); tap_code(KC_P5); tap_code(KC_P4); // Ä
+          tap_code(KC_P0); tap_code(KC_P1); tap_code(KC_P5); tap_code(KC_P4); // Ü
         } else {
-          tap_code(KC_P1); tap_code(KC_P2); tap_code(KC_P9); // ä
+          tap_code(KC_P0); tap_code(KC_P1); tap_code(KC_P2); tap_code(KC_P9); // ü
         }
         unregister_code(KC_LALT);
         return false;
@@ -52,9 +52,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         clear_keyboard();
         register_code(KC_LALT);
         if (temp_mod & MOD_MASK_SHIFT) {
-          tap_code(KC_P1); tap_code(KC_P5); tap_code(KC_P3); // Ä
+          tap_code(KC_P0); tap_code(KC_P1); tap_code(KC_P5); tap_code(KC_P3); // Ö
         } else {
-          tap_code(KC_P1); tap_code(KC_P4); tap_code(KC_P8); // ä
+          tap_code(KC_P0); tap_code(KC_P1); tap_code(KC_P4); tap_code(KC_P8); // ö
         }
         unregister_code(KC_LALT);
         return false;
@@ -64,7 +64,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       if (record->event.pressed) {
         clear_keyboard();
         register_code(KC_LALT);
-        tap_code(KC_P2); tap_code(KC_P2); tap_code(KC_P5); // sz
+        tap_code(KC_P0); tap_code(KC_P2); tap_code(KC_P2); tap_code(KC_P5); // ß
         unregister_code(KC_LALT);
         return false;
       }
