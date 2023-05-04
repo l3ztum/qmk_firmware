@@ -14,3 +14,5 @@
 #define SPLIT_LED_STATE_ENABLE
 #define SPLIT_OLED_ENABLE
 
+#define PS2_CLOCK_PIN   B0
+#define PS2_DATA_PIN    D5

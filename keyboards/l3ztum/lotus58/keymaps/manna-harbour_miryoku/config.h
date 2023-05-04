@@ -6,6 +6,7 @@
 #define XXX KC_NO
 #define COMBO_COUNT 4
 
+
 #define LAYOUT_split_3x5_3( \
   L00, L01, L02, L03, L04,           R00, R01, R02, R03, R04, \
   L10, L11, L12, L13, L14,           R10, R11, R12, R13, R14, \
@@ -13,7 +14,7 @@
                  L30, L31, L32, R30, R31, R32 \
   ) \
   { \
-	{ KC_1, KC_1, KC_2, KC_3, KC_4, KC_5 }, \
+	{ KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5 }, \
     { KC_TAB, L00, L01, L02, L03, L04 }, \
     { KC_LSFT, L10, L11, L12, L13, L14 }, \
     { KC_LCTL, L20, L21, L22, L23, L24 }, \
