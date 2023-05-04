@@ -505,7 +505,8 @@ static void draw_bongo(bool minimal)
 
 
 		oled_set_cursor(0, 2);
-		switch (get_highest_layer(layer_state)) {
+
+		switch (get_highest_layer(layer_state|default_layer_state)) {
 			case 0:
 				oled_write_P(PSTR("L-Base"), false);
 				break;
