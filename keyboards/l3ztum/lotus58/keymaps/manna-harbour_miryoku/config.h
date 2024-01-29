@@ -18,12 +18,12 @@
     { KC_TAB, L00, L01, L02, L03, L04 }, \
     { KC_LSFT, L10, L11, L12, L13, L14 }, \
     { KC_LCTL, L20, L21, L22, L23, L24 }, \
-    { KC_CALC, KC_NO, L30, L31, L32, KC_ENT }, \
-    { KC_NO, KC_0, KC_9, KC_8, KC_7, KC_6 }, \
+    { KC_CALC, KC_MEH, L30, L31, L32, KC_ENT }, \
+    { DF(0), KC_0, KC_9, KC_8, KC_7, KC_6 }, \
     { KC_NO, R04, R03, R02, R01, R00 }, \
     { KC_MEH, R14, R13, R12, R11, R10 }, \
     { KC_NO, R24, R23, R22, R21, R20 }, \
-    { KC_NO, KC_NO, R32, R31, R30, DF(0) } \
+    { KC_NO, KC_HYPR, R32, R31, R30, QK_AREP } \
   }
 
 #define LAYOUT_miryoku( \
