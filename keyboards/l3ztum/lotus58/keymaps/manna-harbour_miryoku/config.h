@@ -23,7 +23,7 @@
     { KC_NO, R04, R03, R02, R01, R00 }, \
     { KC_MEH, R14, R13, R12, R11, R10 }, \
     { KC_NO, R24, R23, R22, R21, R20 }, \
-    { KC_NO, KC_HYPR, R32, R31, R30, QK_AREP } \
+    { KC_NO, KC_HYPR, R32, R31, R30, KC_NO } \
   }
 
 #define LAYOUT_miryoku( \
