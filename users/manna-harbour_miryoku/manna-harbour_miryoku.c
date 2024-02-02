@@ -7,6 +7,7 @@
 
 #include "manna-harbour_miryoku.h"
 
+
 // Additional Features double tap guard
 
 enum {
@@ -56,6 +57,7 @@ const key_override_t **key_overrides = (const key_override_t *[]){
     &capsword_key_override,
     NULL
 };
+
 
 // thumb combos
 

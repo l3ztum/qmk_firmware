@@ -16,10 +16,11 @@ uint16_t alt_tab_timer = 0;     // we will be using them soon.
 
 void turn_on_num_lock(void)
 {
-  if (!(host_keyboard_leds() & (1<<USB_LED_NUM_LOCK))) {
-      register_code(KC_NUM_LOCK);
-      unregister_code(KC_NUM_LOCK);
-      send_keyboard_report();
+    led_t led_state = host_keyboard_led_state();
+    if (led_state.num_lock) {
+        register_code(KC_NUM_LOCK);
+        unregister_code(KC_NUM_LOCK);
+        send_keyboard_report();
     }
 }
 
