@@ -60,20 +60,6 @@
         ]
     },
 
-	"rgblight": {
-        "led_count": 58,
-		"split": true,
-		"split_count": [ 29, 29 ],
-        "hue_steps": 17,
-        "saturation_steps": 17,
-        "brightness_steps": 17,
-		"max_brightness": 175,
-		"animations": {
-            "breathing": true,
-			"rainbow_mood": true,
-			"static_gradient": true
-        }
-    },
     "ws2812": {
         "pin": "D3"
     },
