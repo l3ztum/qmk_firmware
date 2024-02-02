@@ -7,22 +7,17 @@
 
 	"debounce": 5,
 	"features": {
+		"audio": false,
 		"bootmagic": true,
 		"command": false,
 		"console": false,
 		"extrakey": true,
 		"mousekey": true,
-        "encoder": true,
-	    "encoder_map": true,
 		"nkro": true,
-		"rgblight": true,
-    	"oled": true,
-		"audio": false,
 		"split": true,
-		"magic": false,
-		"grave_esc": false,
-		"space_cadet": false,
-		"tap_dance": false
+	    "encoder_map": true,
+    	"oled": true,
+        "encoder": true
 	},
 
 	"build": {
@@ -42,7 +37,7 @@
             {
                 "pin_a": "F4",
                 "pin_b": "F5",
-                "resolution": 4
+                "resolution": 2
             }
         ]
     },
@@ -68,23 +63,13 @@
             "sync_modifiers": true
 		}
 	},
-
-
 	"rgblight": {
-        "led_count": 58,
         "pin": "D3",
-		"split": true,
-		"split_count": [ 29, 29 ],
-		"animations": {
-             "alternating": true,
-             "Wide":true,
-             "cross":true,
-             "rainbow_mood": true,
-             "rainbow_swirl": true,
-             "rgb_test": false,
-             "twinkle": true,
-             "static_gradient": false
-        }
+        "led_count": 70,
+        "max_brightness": 175,
+        "sleep": true,
+        "split": true,
+        "split_count": [29, 29]
     },
 
 	"qmk": {
