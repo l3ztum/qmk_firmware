@@ -71,20 +71,10 @@
 
 
 	"rgblight": {
-        "led_count": 58,
         "pin": "D3",
 		"split": true,
-		"split_count": [ 29, 29 ],
-		"animations": {
-             "alternating": true,
-             "Wide":true,
-             "cross":true,
-             "rainbow_mood": true,
-             "rainbow_swirl": true,
-             "rgb_test": false,
-             "twinkle": true,
-             "static_gradient": false
-        }
+		"sleep": true,
+		"split_count": [ 29, 29 ]
     },
 
 	"qmk": {
