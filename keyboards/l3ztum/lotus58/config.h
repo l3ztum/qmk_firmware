@@ -21,6 +21,9 @@
 #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
 #define ENABLE_RGB_MATRIX_CYCLE_ALL
 #define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT    // Static gradient left to right, speed controls how much gradient changes
+
+#define SPLIT_TRANSPORT_MIRROR
+
 // Not working correct in json implementation
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 2000
