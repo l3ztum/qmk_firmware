@@ -4,7 +4,6 @@
 #pragma once
 
 #define RGBLED_NUM 58
-#define RGB_MATRIX_SPLIT {29, 29}
 #define DRIVER_LED_TOTAL RGBLED_NUM
 #define RGB_MATRIX_LED_COUNT RGBLED_NUM
 
