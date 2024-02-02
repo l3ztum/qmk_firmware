@@ -20,4 +20,4 @@ MIRYOKU_X(NUM,    "Num") \
 MIRYOKU_X(SYM,    "Sym") \
 MIRYOKU_X(FUN,    "Fun")
 
-#endifds
+#endif
