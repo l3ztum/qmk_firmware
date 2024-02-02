@@ -2,8 +2,25 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #pragma once
-#include "config_common.h"
 
+#define RGBLED_NUM 58
+#define RGB_MATRIX_SPLIT {29, 29}
+#define DRIVER_LED_TOTAL RGBLED_NUM
+#define RGB_MATRIX_LED_COUNT RGBLED_NUM
+
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 175
+#define RGB_DISABLE_WHEN_USB_SUSPENDED // turn off effects when suspended
+
+#define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
+#define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
+
+#define RGB_MATRIX_STARTUP_MODE RGB_MATRIX_CYCLE_LEFT_RIGHT // Sets the default mode, if none has been set
+#define RGB_MATRIX_KEYPRESSES   // reacts to keypresses
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS  // reacts to keyreleases (instead of keypresses)
+
+#define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN
+#define ENABLE_RGB_MATRIX_CYCLE_ALL
+#define ENABLE_RGB_MATRIX_CYCLE_LEFT_RIGHT    // Static gradient left to right, speed controls how much gradient changes
 // Not working correct in json implementation
 #define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 2000
@@ -11,20 +28,10 @@
 
 // Not yet supported in json
 
-// Bootmagic Lite key configuration
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 0
-#define BOOTMAGIC_LITE_ROW_RIGHT 5
-#define BOOTMAGIC_LITE_COLUMN_RIGHT 0
-
 #define SPLIT_HAND_PIN B5
 #define SPLIT_LAYER_STATE_ENABLE
 #define SPLIT_LED_STATE_ENABLE
 #define SPLIT_OLED_ENABLE
 
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET              // Activates the double-tap behavior
-#define RP2040_BOOTLOADER_DOUBLE_TAP_RESET_TIMEOUT 200U // Timeout window in ms in which the double tap can occur.
-#define WS2812_PIO_USE_PIO1
-#define SERIAL_PIO_USE_PIO1
 
 #define SERIAL_USART_TX_PIN C7

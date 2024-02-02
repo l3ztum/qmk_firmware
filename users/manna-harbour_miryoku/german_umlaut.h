@@ -101,30 +101,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         }
         break;
-    // case ALT_TAB:
-    //   if (record->event.pressed) {
-    //     if (!is_alt_tab_active) {
-    //       is_alt_tab_active = true;
-    //       register_code(KC_LALT);
-    //     }
-    //     alt_tab_timer = timer_read();
-    //     register_code(KC_TAB);
-    //   } else {
-    //     unregister_code(KC_TAB);
-    //   }
-    //   break;
   }
   return true;
 }
-
-// void matrix_scan_user(void) { // The very important timer.
-//   if (is_alt_tab_active) {
-//     if (timer_elapsed(alt_tab_timer) > 1000) {
-//       unregister_code(KC_LALT);
-//       is_alt_tab_active = false;
-//     }
-//   }
-// }
 
 const uint16_t PROGMEM ae_combo[] = {LGUI_T(KC_A), LALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM oe_combo[] = {KC_O, KC_I, COMBO_END};
