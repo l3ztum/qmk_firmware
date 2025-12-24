@@ -3,7 +3,8 @@
 	"manufacturer": "l3ztum",
 	"url": "google.com",
 	"maintainer": "l3ztum",
-    "development_board": "promicro_rp2040",
+    "development_board": "kb2040",
+    "processor": "RP2040",
 
 	"usb": {
 		"vid": "0x4C34",
@@ -26,5 +27,12 @@
 				{"matrix":[0, 0],	"x":0, "y":0,	"label":"Esc"}
 			]
 		}
+    },
+    "ps2": {
+        "clock_pin": "GP13",
+        "data_pin": "GP12",
+        "driver": "vendor",
+        "enabled": true,
+        "mouse_enabled": true
     }
 }
