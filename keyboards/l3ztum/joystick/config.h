@@ -1,2 +1,3 @@
-#define PS2_CLOCK_PIN   D1
-#define PS2_DATA_PIN    D2
+//#define PS2_CLOCK_PIN   GP13
+//#define PS2_DATA_PIN    GP12
+#define PS2_MOUSE_SWAP_XY
