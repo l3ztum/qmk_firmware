@@ -7,7 +7,6 @@
 #define RGBLIGHT_LED_COUNT 58
 
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 175
-#define RGB_MATRIX_SLEEP // turn off effects when suspended
 
 #define RGB_MATRIX_LED_PROCESS_LIMIT (DRIVER_LED_TOTAL + 4) / 5 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
 #define RGB_MATRIX_LED_FLUSH_LIMIT 16 // limits in milliseconds how frequently an animation will update the LEDs. 16 (16ms) is equivalent to limiting to 60fps (increases keyboard responsiveness)
@@ -31,10 +30,8 @@
 #   define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 #   define ENABLE_RGB_MATRIX_SOLID_REACTIVE
 #endif
-#define SPLIT_TRANSPORT_MIRROR
 
 // Not working correct in json implementation
-#define SPLIT_USB_DETECT
 #define SPLIT_USB_TIMEOUT 2000
 #define SPLIT_USB_TIMEOUT_POLL 10
 

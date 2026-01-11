@@ -4,11 +4,6 @@
 	"url": "https://lectronz.com/stores/tweetys-wild-thinking",
 	"maintainer": "TweetyDaBird",
 
-	"development_board": "kb2040",
-    "processor": "RP2040",
-    "bootloader": "rp2040",
-	"bootloader_instructions": "Short marked pads on PCB, or hold top-outer key when plugging in each hand.",
-
 	"debounce": 5,
 
 	"features": {
@@ -35,6 +30,7 @@
 		"lto": true
 	},
 
+
 	"usb": {
 		"vid": "0xFEED",
         "pid": "0x23B0",
@@ -44,14 +40,6 @@
 
 	"split": {
 		"enabled": true,
-		"main": "pin",
-		// "serial":{
-        //     "driver": "vendor",
-        //     "pin":"GP1"
-        // },
-        // "handedness": {
-        //     "pin": "GP9"
-        // },
 		"transport": {
 			"protocol": "serial",
             "sync": {
@@ -69,16 +57,9 @@
         }
 	},
 
-	// "encoder": {
-    //     "rotary": [
-    //         { "pin_a": "GP28", "pin_b": "GP29", "resolution": 2 }
-    //     ]
-    // },
-
-    // "ws2812": {
-    //     "driver": "vendor",
-    //     "pin": "GP0"
-    // },
+    "ws2812": {
+        "driver": "vendor"
+    },
 	"qmk": {
         "tap_keycode_delay": 10
     },
@@ -89,11 +70,6 @@
     },
 
 	"diode_direction": "COL2ROW",
-	// "matrix_pins": {
-	// 	"rows": ["GP4", "GP5", "GP6", "GP7", "GP8"],
-	// 	"cols": ["GP18", "GP19", "GP20", "GP10", "GP26", "GP27"]
-	// },
-
 	"layouts": {
 		"LAYOUT": {
 			"layout": [
