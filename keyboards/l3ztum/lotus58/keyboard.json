@@ -4,9 +4,9 @@
 	"url": "https://lectronz.com/stores/tweetys-wild-thinking",
 	"maintainer": "TweetyDaBird",
 
-	"development_board": "promicro",
-    "processor": "atmega32u4",
-    "bootloader": "atmel-dfu",
+	"development_board": "kb2040",
+    "processor": "RP2040",
+    "bootloader": "rp2040",
 	"bootloader_instructions": "Short marked pads on PCB, or hold top-outer key when plugging in each hand.",
 
 	"debounce": 5,
@@ -27,7 +27,8 @@
 		"grave_esc": false,
 		"space_cadet": false,
 		"tap_dance": false,
-		"auto_shift": true
+		"auto_shift": true,
+        "rgb_matrix": true
 	},
 
 	"build": {
@@ -44,26 +45,40 @@
 	"split": {
 		"enabled": true,
 		"main": "pin",
-		"soft_serial_pin": "GP12",
-        "handedness": {
-            "pin": "B5"
-        },
+		// "serial":{
+        //     "driver": "vendor",
+        //     "pin":"GP1"
+        // },
+        // "handedness": {
+        //     "pin": "GP9"
+        // },
 		"transport": {
 			"protocol": "serial",
-			"sync_matrix_state": true,
-            "sync_modifiers": true
-		}
+            "sync": {
+                "indicators": true,
+                "layer_state": true,
+                "matrix_state": true,
+                "modifiers": true
+            }
+		},
+        "bootmagic": {
+            "matrix": [5, 0]
+        },
+        "usb_detect": {
+            "enabled": true
+        }
 	},
 
-	"encoder": {
-        "rotary": [
-            { "pin_a": "F5", "pin_b": "F4", "resolution": 2 }
-        ]
-    },
+	// "encoder": {
+    //     "rotary": [
+    //         { "pin_a": "GP28", "pin_b": "GP29", "resolution": 2 }
+    //     ]
+    // },
 
-    "ws2812": {
-        "pin": "D3"
-    },
+    // "ws2812": {
+    //     "driver": "vendor",
+    //     "pin": "GP0"
+    // },
 	"qmk": {
         "tap_keycode_delay": 10
     },
@@ -74,10 +89,10 @@
     },
 
 	"diode_direction": "COL2ROW",
-	"matrix_pins": {
-		"rows": ["D4", "C6", "D7", "E6", "B4"],
-		"cols": ["B1", "B2", "B3", "B6", "F7", "F6"]
-	},
+	// "matrix_pins": {
+	// 	"rows": ["GP4", "GP5", "GP6", "GP7", "GP8"],
+	// 	"cols": ["GP18", "GP19", "GP20", "GP10", "GP26", "GP27"]
+	// },
 
 	"layouts": {
 		"LAYOUT": {
@@ -159,6 +174,7 @@
     "rgb_matrix": {
         "driver": "ws2812",
         "split_count": [29, 29],
+		"sleep": true,
         "layout": [
             {"flags": 4, "matrix": [0, 5], "x": 72, "y": 4},   // L SW06
             {"flags": 4, "matrix": [0, 4], "x": 58, "y": 2},   // L SW05
