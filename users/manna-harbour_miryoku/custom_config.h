@@ -8,6 +8,12 @@
 #define COMBO_COUNT 4
 
 
+#define MIRYOKU_LAYER_EXTRA \
+ KC_Q,              KC_W,              KC_E,              KC_R,              KC_T,              KC_Z,              KC_HA_7,              KC_HA_8,              KC_HA_9,              KC_HA_10,              \
+ KC_A,              KC_S,              KC_D,              KC_F,              KC_G,              KC_X,              KC_HA_4,              KC_HA_5,              KC_HA_6,              KC_HA_11,           \
+ KC_Y,              KC_X,              KC_C,              KC_V,              KC_B,              KC_HA_1,              KC_HA_1,              KC_HA_2,           KC_HA_3,            KC_HA_12,           \
+ U_NP,              U_NP,              KC_H,              KC_M,            KC_SPC,            KC_BSPC,           KC_ENT,            KC_ESC,            U_NP,             U_NP
+
 #define MIRYOKU_LAYER_TAP \
  KC_Q,              KC_W,              KC_E,              KC_R,              KC_T,              KC_Z,              KC_U,              KC_I,              KC_O,              KC_P,              \
  KC_A,              KC_S,              KC_D,              KC_F,              KC_G,              KC_H,              KC_J,              KC_K,              KC_L,              KC_QUOT,           \
